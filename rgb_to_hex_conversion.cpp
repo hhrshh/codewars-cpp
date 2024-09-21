@@ -18,13 +18,9 @@
 
 std::string rgb_to_hex(int r, int g, int b) {
 
-    r = r > 255 ? 255 : r;
-    g = g > 255 ? 255 : g;
-    b = b > 255 ? 255 : b;
-
-    r = r < 0 ? 0 : r;
-    g = g < 0 ? 0 : g;
-    b = b < 0 ? 0 : b;
+    r = std::max(0, std::min(255, r));
+    g = std::max(0, std::min(255, g));
+    b = std::max(0, std::min(255, b));
 
     std::stringstream hex;
 
@@ -39,8 +35,8 @@ std::string rgb_to_hex(int r, int g, int b) {
 int main() {
 
     int r = -20;
-    int g = 2;
-    int b = 3;
+    int g = 300;
+    int b = 300;
     std::cout << rgb_to_hex(r, g, b) << std::endl;
     return 0;
 }
