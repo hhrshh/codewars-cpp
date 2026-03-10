@@ -1,4 +1,4 @@
-
+ï»¿
 
 #include <iostream>
 #include <sstream> 
@@ -37,11 +37,11 @@ std::vector<int>josephus(std::vector<int> items, int k)
     std::vector<int> resault;
 
     if (items.empty()) return resault;
-        
-    for(int i = k - 1; !items.empty(); i += (k - 1))
+
+    for (int i = k - 1; !items.empty(); i += (k - 1))
     {
-        while (i > items.size() - 1) // âìåñòî îïåðàòîðà %
-            i = (i - (items.size() - 1)) - 1; 
+        while (i > items.size() - 1) // Ã¢Ã¬Ã¥Ã±Ã²Ã® Ã®Ã¯Ã¥Ã°Ã Ã²Ã®Ã°Ã  %
+            i = (i - (items.size() - 1)) - 1;
         resault.push_back(items[i]);
         items.erase(items.begin() + i);
     }
